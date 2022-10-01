@@ -8,15 +8,18 @@ body {
   font-family: serif, "Times New Roman", Times;
 }
 
-.background-startpage-container {
+.container-startpage-background {
   height: 100vh;
   color: white;
 }
 
-.background-startpage {
+.background-image-startpage {
   background-image: url(../assets/negative-space-black-forest-dawn.jpg);
   background-size: cover;
-  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
 }
 
 .icon-white a {
@@ -34,6 +37,13 @@ svg {
 .background-about {
   background-color: white;
   height: 100vh;
+}
+
+.background-about h1 {
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: bold;
+  padding: 4%;
 }
 
 .background-contact {
@@ -57,6 +67,10 @@ svg {
 }
 
 @media screen and (min-width: 768px) {
+  .background-about h1 {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
   .background-contact {
     height: 30vh;
   }

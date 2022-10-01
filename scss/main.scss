@@ -13,14 +13,17 @@ body {
 
 //---- STARTPAGE ----
 
-.background-startpage-container {
+.container-startpage-background {
     height: 100vh;
     color: white;
 }
-.background-startpage {
+.background-image-startpage {
     background-image: url(../assets/negative-space-black-forest-dawn.jpg);
     background-size: cover;
-    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
 }
 
 //icon
@@ -37,12 +40,19 @@ svg {
     width: 7%;
 }
 
+
 //---- ABOUT ----
 
 .background-about {
     background-color: white;
     height: 100vh;
+}
 
+.background-about h1 {
+    text-align: center;
+    font-size: 3.5em;
+    font-weight: bold;
+    padding: 4%;
 }
 
 //---- CONTACT ----
@@ -75,7 +85,10 @@ svg {
 
     //---- ABOUT ----
 
-
+    .background-about h1 {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
 
     //---- CONTACT ----
     .background-contact {
