@@ -1,0 +1,52 @@
+//mobile first
+
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+//startpage
+.background-startpage-container {
+    height: 100vh;
+    color: white;
+}
+.background-startpage {
+    background-image: url(../assets/negative-space-black-forest-dawn.jpg);
+    background-size: cover;
+    height: 100%;
+}
+
+//about
+.background-about {
+    background-color: white;
+    height: 100vh;
+
+}
+
+//contact
+.background-contact {
+    background-color: black;
+    height: 50vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.background-contact div {
+    width: 50%; //obs! ändra textstrl så ändras justeringen också?
+    text-align: left;
+
+}
+
+//desktop
+@media screen and (min-width:768px) {
+    .background-contact {
+        display: flex;
+        flex-direction: row;
+        // justify-content: center;
+        // align-items: center;
+        // padding-left: 10%;
+    }
+}
