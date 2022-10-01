@@ -1,7 +1,7 @@
-//------------------------------------- MOBILE FIRST ---------------------------------------
+/*------------------------------------- MOBILE FIRST ---------------------------------------*/
 
 html {
-    font-size: 14pt; //1rem = 14pt;
+    font-size: 14pt; /*1rem = 14pt;*/
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 
 }
 
-//---- STARTPAGE ----
+/*---- STARTPAGE ----*/
 
 .container-startpage-background {
     height: 100vh;
@@ -26,7 +26,7 @@ body {
     width: 100%;
 }
 
-//icon
+/*icon*/
 
 .icon-white a {
     display: flex;
@@ -41,7 +41,7 @@ svg {
 }
 
 
-//---- ABOUT ----
+/*---- ABOUT ----*/
 
 .background-about {
     background-color: white;
@@ -55,7 +55,7 @@ svg {
     padding: 4%;
 }
 
-//---- CONTACT ----
+/*---- CONTACT ---- */
 
 .background-contact {
     background-color: black;
@@ -71,26 +71,26 @@ svg {
     justify-content: space-evenly;
 }
 .textbox-contacts {
-    width: auto; //obs! Håll koll på när ändrar textstrl
+    width: auto; /* obs! Håll koll på när ändrar textstrl */
     text-align: left;
     font-size: 2.5em;
 
 }
 
-//--------------------------------------- DESKTOP -----------------------------------------
+/*--------------------------------------- DESKTOP ----------------------------------------*/
 @media screen and (min-width:768px) {
-    //---- STARTPAGE ----
+    /*---- STARTPAGE ----*/
 
 
 
-    //---- ABOUT ----
+    /*---- ABOUT ----*/
 
     .background-about h1 {
         font-size: 1.3em;
         font-weight: bold;
     }
 
-    //---- CONTACT ----
+    /*---- CONTACT ----*/
     .background-contact {
         height: 30vh;
     }

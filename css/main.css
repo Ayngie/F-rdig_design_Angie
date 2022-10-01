@@ -1,5 +1,7 @@
+@charset "UTF-8";
+/*------------------------------------- MOBILE FIRST ---------------------------------------*/
 html {
-  font-size: 14pt;
+  font-size: 14pt; /*1rem = 14pt;*/
 }
 
 body {
@@ -8,6 +10,7 @@ body {
   font-family: serif, "Times New Roman", Times;
 }
 
+/*---- STARTPAGE ----*/
 .container-startpage-background {
   height: 100vh;
   color: white;
@@ -22,6 +25,7 @@ body {
   width: 100%;
 }
 
+/*icon*/
 .icon-white a {
   display: flex;
   justify-content: center;
@@ -34,6 +38,7 @@ svg {
   width: 7%;
 }
 
+/*---- ABOUT ----*/
 .background-about {
   background-color: white;
   height: 100vh;
@@ -46,6 +51,7 @@ svg {
   padding: 4%;
 }
 
+/*---- CONTACT ---- */
 .background-contact {
   background-color: black;
   height: 100vh;
@@ -61,16 +67,20 @@ svg {
 }
 
 .textbox-contacts {
-  width: auto;
+  width: auto; /* obs! Håll koll på när ändrar textstrl */
   text-align: left;
   font-size: 2.5em;
 }
 
+/*--------------------------------------- DESKTOP ----------------------------------------*/
 @media screen and (min-width: 768px) {
+  /*---- STARTPAGE ----*/
+  /*---- ABOUT ----*/
   .background-about h1 {
     font-size: 1.3em;
     font-weight: bold;
   }
+  /*---- CONTACT ----*/
   .background-contact {
     height: 30vh;
   }
