@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <section class="container-startpage-background">
+    <div id="home" class="container-startpage-background">
       <div class="background-image-startpage">
         <nav>
           <ul>
@@ -28,18 +28,15 @@
             <li>Kontakt</li>
           </ul>
         </nav>
-        <article>
-          <div>
-            <h1>Welcome to nature</h1>
-          </div>
-          <div>
-            <p>Nature...</p>
-          </div>
-          <div>
-            <p>Nature...</p>
-          </div>
-        </article>
-        <article class="icon-white">
+
+        <section>
+          <h1>Welcome to nature</h1>
+          <p>Nature...</p>
+          <p>Nature...</p>
+          <p>Nature...</p>
+        </section>
+
+        <div class="icon-white">
           <a href="#about">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,17 +47,29 @@
                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
             </svg>
           </a>
-        </article>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="background-about">
+    <section id="about" class="background-about">
+      <h1>Träffa laget</h1>
       <article>
-        <h1>Träffa laget</h1>
+        <div>
+          <h3>Rakib</h3>
+        </div>
+        <div>
+          <h3>Alexandra</h3>
+        </div>
+        <div>
+          <h3>Lasse</h3>
+        </div>
+        <div>
+          <h3>Sebastian</h3>
+        </div>
       </article>
     </section>
 
-    <section class="background-contact">
+    <footer id="contact" class="background-contact">
       <div class="container-contacts">
         <div class="textbox-contacts">
           <p>Tegel Consulting AB</p>
@@ -77,6 +86,6 @@
           <p>Facebook</p>
         </div>
       </div>
-    </section>
+    </footer>
   </body>
 </html>
