@@ -11,7 +11,7 @@ body {
 
 }
 
-/*---- STARTPAGE ----*/
+/*-------- STARTPAGE --------*/
 
 .container-startpage-background {
     height: 100vh;
@@ -26,41 +26,176 @@ body {
     width: 100%;
 }
 
-/*icon*/
+/*nav*/
 
-.icon-white a {
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15%;
+    background-color: hsl(0, 0%, 100%, 10%);
+    font-size: 2em;
+
+    li {
+        list-style: none;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0); /*Syns inte här*/
+        transition: border 0.2s; 
+            /*Här är alltså vår transitionregel som gör så att vår transition ska ske. För att slutföra den (den är dold nu - kolla opacity på rbga) - måste vi skriva följande selektor o regel (se nästa nedan)*/
+    
+        a {
+            color: white;
+            text-decoration: none;
+        
+        }
+        a:hover {
+            color: white;
+        }
+    }
+    li:hover {
+        border-bottom: 1px solid rgb(255, 255, 255, 1); /*Nu syns den*/
+    }
+}
+
+/*content*/
+
+#home {
+    position: relative;
+}
+
+#home article {
     display: flex;
     justify-content: center;
+
+    div {
+        position: absolute;
+        height: 33%;
+        top: 33%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 1.4em;
+            padding-left: 10%;
+            padding-right: 10%;
+        } 
+    }
+}
+
+/*icon*/
+
+#icon-white a {
     position: absolute;
-    bottom: 3%;
+    bottom: 4%;
+
+    display: flex;
+    justify-content: center;
     width: 100%;
+
+    svg {
+        width: 7%;
+    }
 }
 
-svg {
-    width: 7%;
-}
-
-
-/*---- ABOUT ----*/
+/*-------- ABOUT --------*/
 
 .background-about {
     background-color: white;
-    height: 100vh;
+    height: 259vh;
 }
 
-.background-about h1 {
-    text-align: center;
-    font-size: 3.5em;
-    font-weight: bold;
-    padding: 4%;
+#about {
+    position: relative;
+
+    h1 {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 600;
+        padding: 4%;
+        letter-spacing: 2px;
+        margin: 5%;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+
+        .person-box {
+            /*background-color: pink;*/
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 3%;
+        
+            h3 {
+                text-align: center;
+                font-size: 0.9em;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+            .profile-pic-box {
+                width: 75%;
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                    margin: 3%;
+                }
+            }
+            .persontext {
+                background-color: lightgrey;
+                border-radius: 10px;
+                padding: 10%;
+                margin: 5%;
+                // display: flex;
+                // flex-direction: row;
+                
+                .quote {
+                    display: flex;
+                    img {
+                        display: inline;
+                        width: 9vw;
+                        height: 5vh;
+                    }
+                    // font-family: Space Grotesk;
+                    // font-size: 6em;
+                    span {
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+    }
 }
 
-/*---- CONTACT ---- */
+#icon-black a {
+    position: absolute;
+    bottom: 2%;
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    svg {
+        width: 7%;
+    }
+}
+
+/*------- CONTACT -------- */
 
 .background-contact {
     background-color: black;
-    height: 100vh;
+    height: 66vh;
     color: white;
+    padding-top: 5%;
+    line-height: normal;
 }
 
 .container-contacts {
@@ -73,26 +208,118 @@ svg {
 .textbox-contacts {
     width: auto; /* obs! Håll koll på när ändrar textstrl */
     text-align: left;
-    font-size: 2.5em;
+    font-size: 1.3em;
+    letter-spacing: 1px;
 
 }
 
 /*--------------------------------------- DESKTOP ----------------------------------------*/
+
 @media screen and (min-width:768px) {
-    /*---- STARTPAGE ----*/
+
+    /*-------- STARTPAGE --------*/
+    /*nav*/
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
+        padding-right: 3%;
+        font-size: 1em;
+        gap: 3%;
+    
+        li {
+            list-style: none;
+            a {
+                color: white;
+                text-decoration: none;
+            
+            }
+            a:hover {
+                color: white;
+            }
+        }
+    }
+
+    /*content*/
 
 
+    #home article div {
+        width: 100%;
+        position: absolute;
+        height: 20%;
+        top: 41%;
+        // text-align: center;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        
+        h1 {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 1em;
+            // padding-left: 10%;
+            // padding-right: 10%;
+        }    
+    }
 
-    /*---- ABOUT ----*/
 
+    /*icon*/
+    #icon-white a {
+        svg {
+        width: 2%;
+        }
+    }
+
+    /*-------- ABOUT --------*/
     .background-about h1 {
         font-size: 1.3em;
         font-weight: bold;
     }
 
-    /*---- CONTACT ----*/
+    #about article {
+        display: flex;
+        flex-direction: row;
+        // justify-content: center;
+        justify-content: space-around; /*space-evenly ?*/
+        flex-wrap: wrap;
+        .person-box {
+            width: 40%; /* Ändra ? */
+            .persontext .quote {
+                img {
+                width: 2vw;
+                height: 4vh;
+                }
+
+                span {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+    /*icon*/
+    #icon-black a {
+        svg {
+        width: 2%;
+        }
+    }
+
+    /*-------- CONTACT --------*/
     .background-contact {
         height: 30vh;
+        padding-bottom: 20%;
     }
 
     .container-contacts {
@@ -103,5 +330,8 @@ svg {
     }
     .textbox-contacts {
         font-size: 1em;
+        height: 80%;
     }
 }
+
+/*--------------------------------------- THE END ----------------------------------------*/
