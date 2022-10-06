@@ -37,6 +37,8 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
+  padding-bottom: 1.5%;
+  font-size: 1em;
   transition: opacity 1s;
   display: none;
   position: absolute;
@@ -51,9 +53,10 @@ body {
 }
 
 .header .menu-icon .nav-icon {
-  height: 2px;
-  width: 18px;
+  height: 6px;
+  width: 35px;
   background: #fff;
+  border-radius: 15px;
   transition: background .2s ease-out;
   display: block;
   position: relative;
@@ -64,18 +67,18 @@ body {
   height: 100%;
   width: 100%;
   background: #fff;
+  border-radius: 15px;
   transition: background .2s ease-out;
   display: block;
   position: absolute;
-  top: 5px;
 }
 
 .header .menu-icon .nav-icon:before {
-  top: 5px;
+  top: 10px;
 }
 
 .header .menu-icon .nav-icon:after {
-  top: -5px;
+  top: -10px;
 }
 
 .header .menu-btn {
@@ -92,7 +95,7 @@ body {
 
 .header ul a {
   color: #fff;
-  padding: 20px;
+  font-size: 1.2em;
   text-decoration: none;
   display: block;
 }
@@ -105,6 +108,29 @@ body {
 
 .header .menu-btn:checked ~ .menu-icon .nav-icon {
   background: none;
+  animation: .2s blueblink;
+}
+
+@keyframes blueblink {
+  0% {
+    background: #0ff;
+  }
+
+  15% {
+    background: #0ff;
+  }
+
+  25% {
+    background: #0ff;
+  }
+
+  75% {
+    background: none;
+  }
+
+  100% {
+    background: none;
+  }
 }
 
 .header .menu-btn:checked ~ .menu-icon .nav-icon:before {
@@ -169,10 +195,10 @@ body {
 
 #about h1 {
   text-align: center;
-  letter-spacing: 2px;
-  margin: 5%;
-  padding: 4%;
-  font-size: 2em;
+  letter-spacing: .05rem;
+  margin-top: 3%;
+  padding: 2%;
+  font-size: 1.5em;
   font-weight: 600;
 }
 
@@ -186,7 +212,7 @@ body {
   width: 90vw;
   flex-direction: column;
   align-items: center;
-  margin: 3%;
+  margin: 3% 3% 5%;
   display: flex;
 }
 
@@ -219,35 +245,33 @@ body {
   display: flex;
 }
 
-#about article .person-box .persontext .quote img {
-  width: 9vw;
-  height: 5vh;
-  display: inline;
+#about article .person-box .persontext .quote svg {
+  rotate: 180deg;
 }
 
 #about article .person-box .persontext .quote span {
-  line-height: normal;
+  line-height: 1.2;
 }
 
 #icon-black a {
   width: 100%;
   justify-content: center;
+  margin-bottom: 3%;
   display: flex;
-  position: absolute;
-  bottom: 2%;
 }
 
 #icon-black a svg {
   width: 7%;
+  margin-bottom: 6%;
 }
 
 .social-media-icon {
   width: 10%;
+  margin-right: 10px;
   padding: 3px;
 }
 
 .background-contact {
-  height: 66vh;
   color: #fff;
   background-color: #000;
   padding-top: 5%;
@@ -280,12 +304,19 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    gap: 3%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-right: 3%;
+    font-size: .9em;
     display: flex;
     top: 0;
   }
 
   .header .menu li {
+    border-bottom: 1px solid #fff0;
     list-style: none;
+    transition: border .2s;
   }
 
   .header .menu li a {
@@ -295,6 +326,10 @@ body {
 
   .header .menu li a:hover {
     color: #fff;
+  }
+
+  .header .menu li:hover {
+    border-bottom: 1px solid #fff;
   }
 
   .header .menu-icon {
@@ -334,6 +369,7 @@ body {
 
   #about article .person-box {
     width: 40%;
+    margin-bottom: 5%;
   }
 
   #about article .person-box .persontext .quote img {
@@ -343,15 +379,12 @@ body {
 
   #about article .person-box .persontext .quote span {
     font-size: .7em;
+    line-height: .5;
   }
 
   #icon-black a svg {
     width: 2%;
-  }
-
-  .social-media-icon {
-    width: 10%;
-    padding: 3px;
+    margin-bottom: 0;
   }
 
   .background-contact {
@@ -361,7 +394,6 @@ body {
 
   .container-contacts {
     flex-direction: row;
-    align-items: center;
     margin-left: 10%;
     display: flex;
   }
