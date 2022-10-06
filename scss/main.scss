@@ -1,3 +1,5 @@
+@use "mixins";
+
 /*------------------------------------- MOBILE FIRST ---------------------------------------*/
 
 html {
@@ -26,35 +28,104 @@ body {
     width: 100%;
 }
 
-/*nav*/
+/* nav */
 
-nav ul {
+.header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 15%;
+    flex-direction: row;
+    justify-content: flex-end;
     background-color: hsl(0, 0%, 100%, 10%);
-    font-size: 2em;
+    width: 100%;
+    z-index: 3; /*So the content below slides underneath*/
 
-    li {
-        list-style: none;
+    .menu { /*min ul*/
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        top: 50px;
+
+        display: none;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .menu-icon {
+        padding: 28px 20px;
+        position: relative; /*Container for span (.nav-icon) which we want to position absolute.*/
+        float: right;
         cursor: pointer;
-        border-bottom: 1px solid rgba(255, 255, 255, 0); /*Syns inte här*/
-        transition: border 0.2s; 
-            /*Här är alltså vår transitionregel som gör så att vår transition ska ske. För att slutföra den (den är dold nu - kolla opacity på rbga) - måste vi skriva följande selektor o regel (se nästa nedan)*/
-    
-        a {
-            color: white;
-            text-decoration: none;
-        
+
+        .nav-icon {
+            background: white;
+            display: block;
+            height: 2px;
+            width: 18px;
+            position: relative;
+            transition:background 0.2s ease-out; /*For the bars rotation...*/
         }
-        a:hover {
-            color: white;
+        .nav-icon:before, .nav-icon:after {
+            background: white;
+            content: ""; /*This allows us to add the bars via css...*/
+            display: block;
+            height: 100%; /*So it is the same height as its original.*/
+            width: 100%;
+            position: absolute;
+            top: 5px;
+            transition:background 0.2s ease-out;
+        }
+        .nav-icon:before {
+            top: 5px;
+        }
+        .nav-icon:after {
+            top: -5px;
         }
     }
-    li:hover {
-        border-bottom: 1px solid rgb(255, 255, 255, 1); /*Nu syns den*/
+
+    .menu-btn {
+        display: none;
     }
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden; /*If anything flows out of bounds it will just be hidden.*/
+    background-color: hsl(0, 0%, 100%, 10%);
+
+    a {
+        color: white; /*white anchor tags*/
+        text-decoration: none;
+        display: block; /*blocklevel elements på anchor tags nu, lättare att klicka på dem då.*/
+        padding: 20px;
+        // border-right: 1px solid#aaa;
+    }
+}
+
+.header .menu-btn:checked ~.menu {/*for when the menu /checkbox is checked*/
+    // max-height: 240px; /*Now our menu expands*/
+    display: flex;
+    opacity: 1;
+    transition: opacity 1s;
+
+}
+
+.header .menu-btn:checked ~.menu-icon .nav-icon {
+    background:transparent; /*Ta bort mitten-baren*/
+}
+
+.header .menu-btn:checked ~.menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0; /*Lägg dem på samma rad så de bildar ett kryss tillsammans*/
+}
+
+.header .menu-btn:checked ~.menu-icon .nav-icon:after {
+    transform: rotate(45deg); /*Lägg dem på samma rad så de bildar ett kryss tillsammans*/
+    top: 0;
+
 }
 
 /*content*/
@@ -75,17 +146,17 @@ nav ul {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
+
         h1 {
             font-size: 2em;
             font-weight: bold;
         }
-        
+
         p {
             font-size: 1.4em;
             padding-left: 10%;
             padding-right: 10%;
-        } 
+        }
     }
 }
 
@@ -108,7 +179,7 @@ nav ul {
 
 .background-about {
     background-color: white;
-    height: 259vh;
+    // height: 259vh;
 }
 
 #about {
@@ -125,7 +196,7 @@ nav ul {
     article {
         display: flex;
         flex-direction: column;
-        align-items: center;  
+        align-items: center;
 
         .person-box {
             /*background-color: pink;*/
@@ -134,7 +205,7 @@ nav ul {
             flex-direction: column;
             align-items: center;
             margin: 3%;
-        
+
             h3 {
                 text-align: center;
                 font-size: 0.9em;
@@ -147,6 +218,7 @@ nav ul {
                     width: 100%;
                     border-radius: 50%;
                     margin: 3%;
+                    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.25), 0 2px 20px 0 rgba(0, 0, 0, 0.25);
                 }
             }
             .persontext {
@@ -156,7 +228,7 @@ nav ul {
                 margin: 5%;
                 // display: flex;
                 // flex-direction: row;
-                
+
                 .quote {
                     display: flex;
                     img {
@@ -190,6 +262,11 @@ nav ul {
 
 /*------- CONTACT -------- */
 
+.social-media-icon {
+    padding: 3px;
+    width: 10%;
+}
+
 .background-contact {
     background-color: black;
     height: 66vh;
@@ -199,11 +276,13 @@ nav ul {
 }
 
 .container-contacts {
-    height: 100%;
+    // height: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 20%;
     justify-content: space-evenly;
+    gap: 50px;
+    padding-top: 30px;
 }
 .textbox-contacts {
     width: auto; /* obs! Håll koll på när ändrar textstrl */
@@ -218,28 +297,41 @@ nav ul {
 @media screen and (min-width:768px) {
 
     /*-------- STARTPAGE --------*/
-    /*nav*/
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        padding-top: 1.5%;
-        padding-bottom: 1.5%;
-        padding-right: 3%;
-        font-size: 1em;
-        gap: 3%;
-    
-        li {
-            list-style: none;
-            a {
-                color: white;
-                text-decoration: none;
-            
+
+    /* nav */
+
+    .header {
+        position: absolute;
+        .menu {
+            top: 0;
+            display: block;
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            // padding-top: 1.5%;
+            // padding-bottom: 1.5%;
+            // padding-right: 3%;
+            // font-size: 1em;
+            // gap: 3%;
+
+            li {
+                list-style: none;
+                a {
+                    color: white;
+                    text-decoration: none;
+
+                }
+                a:hover {
+                    color: white;
+                }
             }
-            a:hover {
-                color: white;
-            }
+
+        }
+
+        .menu-icon {
+            display: none;
         }
     }
 
@@ -255,17 +347,17 @@ nav ul {
         // display: flex;
         // flex-direction: column;
         // justify-content: space-between;
-        
+
         h1 {
             font-size: 1.3em;
             font-weight: bold;
         }
-        
+
         p {
             font-size: 1em;
             // padding-left: 10%;
             // padding-right: 10%;
-        }    
+        }
     }
 
 
@@ -277,6 +369,11 @@ nav ul {
     }
 
     /*-------- ABOUT --------*/
+
+    // .background-about {
+    //     height: 180vh;
+    // }
+
     .background-about h1 {
         font-size: 1.3em;
         font-weight: bold;
@@ -303,12 +400,6 @@ nav ul {
         }
     }
 
-
-
-
-
-
-
     /*icon*/
     #icon-black a {
         svg {
@@ -317,20 +408,25 @@ nav ul {
     }
 
     /*-------- CONTACT --------*/
+    .social-media-icon {
+        padding: 3px;
+        width: 10%;
+    }
     .background-contact {
         height: 30vh;
         padding-bottom: 20%;
     }
 
     .container-contacts {
-        margin-left: 0;
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-left: 10%;
     }
     .textbox-contacts {
         font-size: 1em;
-        height: 80%;
+        width: 33%;
+        // height: 80%;
     }
 }
 
