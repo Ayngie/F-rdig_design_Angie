@@ -117,7 +117,7 @@ body {
 
 .header .menu-btn:checked ~.menu-icon .nav-icon {
     background:transparent; /*Ta bort mitten-baren*/
-    animation: blueblink 0.4s linear;
+    animation: blueblink 0.3s linear;
 }
 
 @keyframes blueblink {
