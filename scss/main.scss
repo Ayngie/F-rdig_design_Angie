@@ -63,23 +63,22 @@ body {
         cursor: pointer;
 
         .nav-icon {
-            background: var.$primary;
+            background-color: var.$primary;
             display: block;
             height: 6px;
             width: 35px;
             border-radius: 15px;
             position: relative;
-            transition: background 0.2s ease-out; /*For the bars rotation...*/
         }
         .nav-icon:before, .nav-icon:after {
-            background: var.$primary;
+            background-color: var.$primary;
             content: ""; /*This allows us to add the bars via css...*/
             display: block;
             height: 100%; /*So it is the same height as its original.*/
             width: 100%;
             border-radius: 15px;
             position: absolute;
-            transition: background 0.2s ease-out;
+            transition: transform 0.2s linear;
         }
         .nav-icon:before {
             top: 10px;
@@ -118,25 +117,19 @@ body {
 
 .header .menu-btn:checked ~.menu-icon .nav-icon {
     background:transparent; /*Ta bort mitten-baren*/
-    animation: blueblink 0.2s ease;
+    animation: blueblink 0.4s linear;
 }
 
 @keyframes blueblink {
     0% {
         background: aqua;
     }
-    15% {
-        background: aqua;
 
-    }
     25% {
-        background: aqua;
-
-    }
-    75% {
         background: transparent;
 
     }
+
     100% {
         background: transparent;
 
@@ -147,7 +140,7 @@ body {
     top: 0; /*Lägg dem på samma rad så de bildar ett kryss tillsammans*/
     
     // animation: lowerbar 0.2s linear;
-    transform: rotate(-45deg);
+    transform: rotate(-135deg);
 
 }
 
@@ -155,7 +148,7 @@ body {
     top: 0; /*Lägg dem på samma rad så de bildar ett kryss tillsammans*/
     
     // animation: upperbar 0.2s linear;
-    transform: rotate(45deg); 
+    transform: rotate(135deg); 
 
 
 }
