@@ -19,6 +19,7 @@ body {
     height: 100vh;
     color: var.$primary;
 }
+
 .background-image-startpage {
     background-image: url(../assets/negative-space-black-forest-dawn.jpg);
     background-size: cover;
@@ -53,16 +54,15 @@ body {
 
         font-size: 1em;
         padding-bottom: 1.5%;
-        
     }
 
     .menu-icon {
         padding: 28px 20px;
-        position: relative; /*Container for span (.nav-icon) which we want to position absolute.*/
+        position: relative; 
         float: right;
         cursor: pointer;
 
-        .nav-icon {
+        .nav-icon { /*(.nav-icon)*/
             background-color: var.$primary;
             display: block;
             height: 6px;
@@ -108,7 +108,7 @@ body {
     }
 }
 
-.header .menu-btn:checked ~.menu {/*for when the menu /checkbox is checked*/
+.header .menu-btn:checked ~.menu { /*for when the menu /checkbox is checked*/
     display: flex;
     opacity: 1;
     transition: opacity 1s;
@@ -139,7 +139,6 @@ body {
 .header .menu-btn:checked ~.menu-icon .nav-icon:before {
     top: 0; /*Lägg dem på samma rad så de bildar ett kryss tillsammans*/
     
-    // animation: lowerbar 0.2s linear;
     transform: rotate(-135deg);
 
 }
@@ -147,55 +146,8 @@ body {
 .header .menu-btn:checked ~.menu-icon .nav-icon:after {    
     top: 0; /*Lägg dem på samma rad så de bildar ett kryss tillsammans*/
     
-    // animation: upperbar 0.2s linear;
     transform: rotate(135deg); 
-
-
 }
-
-// @keyframes lowerbar { /*.nav-icon:before*/
-//     0% {
-//         transform: rotate(0);
-
-//     }
-//     25% {
-//         transform: rotate(-15deg);
-//     }
-//     50% {
-//         transform: rotate(-25deg);
-
-//     }
-//     75% {
-//         transform: rotate(-35deg);
-
-//     }
-//     100% {
-//         transform: rotate(-45deg);
-//     }
-// }
-
-// @keyframes upperbar { /*.nav-icon:after*/
-//     0% {
-//         transform: rotate(0);
-
-//     }
-//     25% {
-//         transform: rotate(15deg);
-//     }
-//     50% {
-//         transform: rotate(25deg);
-
-//     }
-//     75% {
-//         transform: rotate(35deg);
-
-//     }
-//     100% {
-//         transform: rotate(45deg);
-//     }
-
-// }
-
 
 /*content*/
 
@@ -333,7 +285,6 @@ body {
     margin-right: 10px;
 }
 
-
 .background-contact {
     background-color: black;
     color: var.$primary;
@@ -349,6 +300,7 @@ body {
     gap: 50px;
     padding-top: 30px;
 }
+
 .textbox-contacts {
     width: auto; 
     text-align: left;
@@ -367,6 +319,7 @@ body {
 
     .header {
         position: absolute;
+
         .menu {
             top: 0;
             display: block;
@@ -393,15 +346,15 @@ body {
                     text-decoration: none;
 
                 }
+                
                 a:hover {
                     color: var.$primary;
                 }
             }
+
             li:hover {
                 border-bottom: 1px solid rgb(255, 255, 255, 1); /*Nu syns den*/
             }
-        
-
         }
 
         .menu-icon {
@@ -410,7 +363,6 @@ body {
     }
 
     /*content*/
-
 
     #home article div {
         width: 100%;
@@ -430,6 +382,7 @@ body {
 
 
     /*icon*/
+
     #icon-white a {
         svg {
         width: 2%;
@@ -448,11 +401,13 @@ body {
         flex-direction: row;
         justify-content: space-around; 
         flex-wrap: wrap;
+
         .person-box {
             width: 40%; 
             margin-bottom: 5%;
 
             .persontext .quote {
+
                 img {
                 width: 2vw;
                 height: 4vh;
@@ -468,7 +423,9 @@ body {
     }
 
     /*icon*/
+
     #icon-black a {
+
         svg {
         width: 2%;
         margin-bottom: 0;
@@ -487,6 +444,7 @@ body {
         flex-direction: row;
         margin-left: 10%;
     }
+    
     .textbox-contacts {
         font-size: 1em;
         width: 33%;
