@@ -5,7 +5,7 @@
 We were given screenshots and a quick video of a web page, and then asked to recreate it in every detail.
 
 ## Screenshot of project
-![Ready Design](https://angelicareutersward.se/assets/readyDesign/readyDesign.png)
+![Ready Design](https://angelicareutersward.se/Images/readyDesign/readyDesign.png)
 
 ## Techniques used
 ![VSCode badge](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white/to/img.png)
